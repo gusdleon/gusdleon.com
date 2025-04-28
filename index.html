@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link rel="canonical" href="https://gusdleon.com">
-		<title>gusdleon.com &mdash; Coming Soon</title>
+		<link id="canonical-link" rel="canonical" href="">
+		<title id="page-title"></title>
 		<meta name="description" content="My personal page">
 		<style>
 			body {font-size: 10px;color: #777777;font-family: arial;text-align: center;}
@@ -17,7 +17,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>gusdleon.com</h1>
+		<h1 id="site-name"></h1>
 		<div>
 			<a>Powered by</a>
 			<a href="https://github.com" target="_blank">Github,</a>
@@ -31,5 +31,14 @@
 				Share with me via Nextcloud
 			</a>
 		</footer>
+		<script>
+			// Obtener el host dinámico
+			const host = window.location.hostname;
+
+			// Actualizar el contenido dinámicamente
+			document.getElementById('site-name').textContent = host;
+			document.getElementById('page-title').textContent = `${host} — Coming Soon`;
+			document.getElementById('canonical-link').href = `https://${host}`;
+		</script>
 	</body>
 </html>
